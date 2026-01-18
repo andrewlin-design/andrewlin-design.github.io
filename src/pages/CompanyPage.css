@@ -1,0 +1,210 @@
+.page-content {
+  margin-left: 280px;
+  margin-top: 72px;
+  padding: 48px;
+  min-height: calc(100vh - 72px);
+  background-color: #fafafa;
+}
+
+.company-header {
+  margin-bottom: 48px;
+  max-width: 800px;
+}
+
+.company-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.company-header-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.company-header-logo-fallback {
+  width: 48px;
+  height: 48px;
+  background-color: #0066cc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.company-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.company-description {
+  font-size: 18px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e5e5;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.project-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #1a1a1a;
+}
+
+.project-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #0066cc;
+}
+
+.project-link:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.project-description {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex: 1;
+}
+
+.project-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.project-role,
+.project-timeline {
+  font-size: 14px;
+  color: #999999;
+  background-color: #f8f9fa;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.project-cta {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.project-cta:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+.project-cta:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.error-message {
+  text-align: center;
+  padding: 64px 32px;
+}
+
+.error-message h1 {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.error-message p {
+  font-size: 18px;
+  color: #666666;
+  margin-bottom: 32px;
+}
+
+.back-link {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-content {
+    margin-left: 0;
+    padding: 24px 16px;
+  }
+  
+  .company-header {
+    margin-bottom: 32px;
+  }
+  
+  .company-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .company-name {
+    font-size: 28px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .project-card {
+    padding: 24px;
+  }
+  
+  .project-title {
+    font-size: 20px;
+  }
+}

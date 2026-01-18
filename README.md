@@ -1,242 +1,111 @@
-# Andrew Lin - UX Designer Portfolio
+# Andrew Lin Portfolio
 
-A modern, responsive portfolio website built for showcasing UX design work. This site is optimized for GitHub Pages hosting and follows best practices for performance, accessibility, and user experience.
+A modern React-based portfolio website showcasing UX design work and case studies.
 
-## ✨ Features
+## Features
 
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Side Navigation**: Fixed navigation bar inspired by modern portfolio sites
-- **Project Showcase**: Dynamic project grid with detailed case study modals
-- **Performance Optimized**: Fast loading with lazy loading images and optimized assets
-- **Accessible**: WCAG 2.1 AA compliant with keyboard navigation and screen reader support
-- **SEO Friendly**: Semantic HTML structure with meta tags
-- **GitHub Pages Ready**: Static site with no backend dependencies
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern React Architecture**: Built with React 18 and React Router v6
+- **Component-Based**: Modular, reusable components for easy maintenance
+- **Accessible**: WCAG-compliant design with proper semantic markup
+- **Performance Optimized**: Fast loading with efficient asset management
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Git
-- Web browser
-- Code editor (recommended: VS Code)
-
-### Local Development
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/andrewlin/andrewlin.github.io.git
-   cd andrewlin.github.io
-   ```
-
-2. **Serve locally** (choose one option)
-   
-   **Option A: Using Python (if installed)**
-   ```bash
-   python -m http.server 8000
-   ```
-   
-   **Option B: Using Node.js (if installed)**
-   ```bash
-   npx serve .
-   ```
-   
-   **Option C: Using VS Code Live Server extension**
-   - Install the "Live Server" extension
-   - Right-click on `index.html` and select "Open with Live Server"
-
-3. **Open in browser**
-   - Navigate to `http://localhost:8000` (or the port shown in terminal)
-
-### GitHub Pages Deployment
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial portfolio setup"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages**
-   - Go to your repository settings on GitHub
-   - Scroll to "Pages" section
-   - Select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
-   - Click "Save"
-
-3. **Access your live site**
-   - Your site will be available at: `https://yourusername.github.io`
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-andrewlin.github.io/
-├── index.html              # Main HTML file
-├── css/
-│   ├── styles.css          # Main stylesheet
-│   └── responsive.css      # Responsive design styles
-├── js/
-│   ├── main.js            # Main application logic
-│   ├── navigation.js      # Navigation functionality
-│   └── projects.js        # Project data and management
-├── assets/
-│   ├── images/
-│   │   ├── andrew-profile.jpg
-│   │   ├── projects/       # Project images
-│   │   └── README.md       # Image guidelines
-│   └── Andrew_Lin_Resume.pdf
-└── README.md
+src/
+├── components/          # Reusable UI components
+│   ├── Header.js       # Site header with logo
+│   ├── Sidebar.js      # Navigation sidebar
+│   └── *.css           # Component-specific styles
+├── pages/              # Page components
+│   ├── HomePage.js     # Landing page
+│   ├── CompanyPage.js  # Company portfolio pages
+│   ├── ProjectPage.js  # Individual project case studies
+│   └── *.css           # Page-specific styles
+├── data/               # Data layer
+│   └── companies.js    # Company and project data
+├── assets/             # Static assets
+│   └── logos/          # Company logos
+├── App.js              # Main app component with routing
+├── index.js            # React entry point
+└── index.css           # Global styles
 ```
 
-## 🎨 Customization
+## Getting Started
 
-### 1. Personal Information
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-**Update in `index.html`:**
-- Name and title in the navigation
-- About section content
-- Contact information
-- Social media links
+2. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### 2. Projects
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
-**Edit `js/projects.js`:**
-```javascript
-const projectsData = [
-    {
-        id: 'your-project-id',
-        title: 'Your Project Title',
-        subtitle: 'Category • Status Year',
-        description: 'Brief project description...',
-        image: './assets/images/projects/your-project.jpg',
-        tags: ['Tag1', 'Tag2', 'Tag3'],
-        featured: true,
-        // ... additional project details
-    }
-];
-```
+## Adding New Content
 
-### 3. Styling
+### Adding a New Company
 
-**Colors** (in `css/styles.css`):
-```css
-:root {
-    --color-primary: #2563eb;        /* Main brand color */
-    --color-secondary: #64748b;      /* Secondary color */
-    --color-background: #ffffff;     /* Background color */
-    /* ... other color variables */
-}
-```
+1. Add company data to `src/data/companies.js`:
+   ```javascript
+   {
+     id: 'company-slug',
+     name: 'Company Name',
+     logo: '/assets/logos/company.svg',
+     projects: [...]
+   }
+   ```
 
-**Typography** (Google Fonts link in `index.html`):
-- Current font: Inter
-- To change: Update the Google Fonts URL and CSS font-family
+2. Add the company logo to `src/assets/logos/`
 
-### 4. Images
+### Adding a New Project
 
-Add your images to the `assets/images/` directory:
-- **Profile photo**: `andrew-profile.jpg` (400x400px)
-- **Project images**: `assets/images/projects/` (800x600px recommended)
-- **Resume**: `assets/Andrew_Lin_Resume.pdf`
+1. Add project data to the company's projects array in `src/data/companies.js`:
+   ```javascript
+   {
+     id: 'project-slug',
+     title: 'Project Title',
+     description: 'Brief description',
+     overview: 'Detailed overview...',
+     challenge: 'Problem statement...',
+     solution: 'How you solved it...',
+     impact: 'Results and metrics...',
+     timeline: '6 months',
+     role: 'Lead UX Designer',
+     team: 'Team composition...',
+     images: ['path/to/image1.jpg', ...]
+   }
+   ```
 
-See `assets/images/README.md` for detailed image guidelines.
+2. Add project images to `src/assets/projects/company-slug/`
 
-## 🛠 Technical Features
+## Design System
 
-### Performance
-- Lazy loading for images
-- Minified and optimized CSS/JS
-- Efficient DOM manipulation
-- Intersection Observer for animations
+The portfolio uses a consistent design system with:
 
-### Accessibility
-- Semantic HTML structure
-- ARIA labels and roles
-- Keyboard navigation support
-- Screen reader compatibility
-- Color contrast compliance
+- **Typography**: Inter font family with clear hierarchy
+- **Colors**: 
+  - Primary: #0066cc (blue)
+  - Text: #1a1a1a (dark gray)
+  - Secondary text: #666666, #999999
+  - Background: #ffffff, #fafafa
+- **Spacing**: 8px base unit with consistent spacing scale
+- **Components**: Reusable buttons, cards, and navigation elements
 
-### Browser Support
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Graceful degradation for older browsers
+## Browser Support
 
-### SEO
-- Meta tags for search engines
-- Open Graph tags for social sharing
-- Structured data markup
-- Semantic URL structure
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
-## 📱 Responsive Breakpoints
+## License
 
-- **Desktop**: 1200px and above
-- **Laptop**: 1024px - 1199px
-- **Tablet**: 768px - 1023px
-- **Mobile**: 640px and below
-- **Small Mobile**: 480px and below
-
-## 🎯 Best Practices Implemented
-
-1. **Code Organization**
-   - Modular JavaScript architecture
-   - Separated concerns (HTML/CSS/JS)
-   - Reusable component patterns
-
-2. **Performance**
-   - Optimized images and assets
-   - Minimal external dependencies
-   - Efficient CSS selectors
-
-3. **User Experience**
-   - Intuitive navigation
-   - Fast loading times
-   - Smooth animations
-   - Touch-friendly interface
-
-4. **Maintainability**
-   - Clear code comments
-   - Consistent naming conventions
-   - Scalable project structure
-
-## 🚨 Important Notes
-
-### GitHub Pages Limitations
-- **Static files only**: No server-side processing
-- **No backend**: Use external services for forms (Netlify Forms, Formspree)
-- **HTTPS only**: All external resources must use HTTPS
-- **File size limits**: Keep images under 25MB total
-
-### Content Updates
-- **Projects**: Add new entries to `projectsData` array in `js/projects.js`
-- **Images**: Optimize for web before uploading
-- **Resume**: Replace PDF file and update link in contact section
-
-## 🔧 Troubleshooting
-
-**Site not loading on GitHub Pages:**
-1. Check that `index.html` is in the root directory
-2. Verify GitHub Pages is enabled in repository settings
-3. Ensure all file paths are relative (no leading slash)
-
-**Images not displaying:**
-1. Check file paths are correct and case-sensitive
-2. Ensure images are in the correct directory structure
-3. Verify image files are committed to the repository
-
-**Layout issues on mobile:**
-1. Test responsive design at different screen sizes
-2. Check CSS media queries are properly formatted
-3. Validate HTML structure is correct
-
-## 📧 Support
-
-For questions or issues:
-1. Check the troubleshooting section above
-2. Review the code comments for guidance
-3. Refer to GitHub Pages documentation
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-**Built with ❤️ for showcasing exceptional UX design work**
+This project is for portfolio purposes.
